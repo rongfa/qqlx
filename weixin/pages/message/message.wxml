@@ -1,0 +1,25 @@
+<!-- 没有消息 -->
+<block wx:if="{{msgList.length==0}}">
+  <import src="../../common/component/nullTip/nullTip.wxml" />
+
+  <template is="nullTip" data="{{nullTip: nullTip}}" />
+</block>
+<block wx:else>
+  <!-- 有消息 -->
+  <view class="cells" wx:for="{{msgList}}" wx:for-item="msgItem" wx:for-index="msgIndex" wx:key="msg">
+    <view class="cell cell-access" bindtap="chooseMsg" data-msgid="{{msgItem.id}}">
+      <image src="{{msgItem.adLogo}}" class="ioc"></image>
+      <view>
+        <view class="label-title">{{msgItem.mineName}}</view>
+        <text class="label-content">恭喜你挖到矿X{{msgItem.rewardMoney}}</text>
+      </view>
+      <view>
+        <view class="label-time">{{msgItem.showDate}}
+          <block wx:if="{{!msgItem.status}}">
+            <label class="label-tip"></label>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>

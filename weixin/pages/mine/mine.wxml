@@ -1,0 +1,42 @@
+<block wx:if="{{!login}}">
+  <modal title="请求授权用户信息" confirm-text="去授权" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    需要获取您的个人信息，请确认授权
+    <button open-type='getUserInfo' class="user-btn" bindgetuserinfo="getUserInfo"></button>
+  </modal>
+</block>
+<block wx:else>
+  <view class="mine-list">
+    <block wx:for="{{mineList}}" wx:for-item="mineItem" wx:for-index="mineIndex" wx:key="mine">
+      <view class="mine-item {{mineItem.status ? 'mine-item-current' : ''}}" data-mineid="{{mineItem.id}}" bindtap="chooseMine">
+
+        <image src="{{mineItem.adLogo}}" class="mine-img"></image>
+
+        <view class="mine-name">{{mineItem.name}}</view>
+
+        <view class="mine-wealth">
+          <image class="mine-ioc" src='../../dist/icos/money0.png'></image>
+          <text class="mine-text-label">X</text>
+          <text class="mine-text-total">{{mineItem.totalAmount}}</text>
+        </view>
+
+        <view class="mine-slogan">{{mineItem.adMotto}}</view>
+
+        <view class="mine-total">
+          <view class="mine-progress" style="width: {{mineItem.sendAmount/mineItem.totalAmount*100}}%;"></view>
+        </view>
+
+      </view>
+    </block>
+
+
+    <block wx:for="{{systemList}}" wx:for-item="systemItem" wx:for-index="systemIndex" wx:key="mine">
+      <view class="mine-item mine-item-system" data-mineid="{{systemItem.id}}" bindtap="chooseMine">
+        <image src="{{systemItem.adLogo}}" class="system-img"></image>
+      </view>
+    </block>
+
+    <view class="mine-item mine-ad" bindtap="chooseAD">
+      <view class="ad-info">广告投入</view>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,13 @@
+<!-- <view class='bg_box'>
+  <video binderror="videoErrorCallback" id="myVideo" src="../../dist/temp/aaa.mp4" objectFit='fill' autoplay='{{true}}' loop='{{true}}' enable-progress-gesture="{{false}}" show-play-btn="{{false}}" show-fullscreen-btn="{{false}}" controls="{{false}}">
+  </video>
+</view> -->
+
+
+<view class='imagesize'>
+  <image src="../../dist/images/loading.gif" class='in-image'></image>
+</view>
+
+<view class='logo-img'>
+  <image class="logo" src="../../dist/images/logo.png"></image>
+</view>

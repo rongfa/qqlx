@@ -1,0 +1,102 @@
+@import '../../common/style/tab.wxss';
+@import '../../common/component/nullTip/nullTip.wxss';
+
+page {
+  background: #f4f4f4;
+  color: #555;
+}
+
+.cells {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cell {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  width: 750rpx;
+  height: 120rpx;
+  padding: 0 30rpx;
+}
+
+.cell::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 30rpx;
+  width: 100%;
+  height: 1px;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+  background-color: #e5e5e5;
+}
+
+.ioc {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  border-radius: 40rpx;
+  margin-top: 20rpx;
+}
+
+.label-title {
+  padding-left: 100rpx;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  color: #555;
+  font-weight: bold;
+}
+
+.label-content {
+  padding-left: 100rpx;
+  font-size: 24rpx;
+  padding-top: 10rpx;
+  display: inline-block;
+  width: 400rpx;
+  overflow: hidden; /*隐藏溢出的文本  */
+  white-space: nowrap; /*不换行  */
+  text-overflow: ellipsis;
+}
+
+.label-rank {
+  line-height: 120rpx;
+  font-size: 28rpx;
+  padding-right: 30rpx;
+}
+
+.label-ioc {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+}
+
+.label-money-value {
+  margin-left: 30rpx;
+  padding: 0 10rpx;
+}
+
+.rank-ioc {
+  width: 60rpx;
+  height: 60rpx;
+  position: relative;
+  margin-right: -20rpx;
+  margin-top: 15px;
+}
+
+.location-btn {
+  width: 320rpx;
+  position: fixed;
+  z-index: 999;
+  height: 80rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  border-radius: 0rpx;
+  opacity: 0;
+}

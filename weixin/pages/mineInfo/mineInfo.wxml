@@ -1,0 +1,52 @@
+<view class="mine-img">
+  <image mode="widthFix" src="{{mineInfo.adImg}}" class=" img-info"></image>
+</view>
+
+<view class="mine-name">{{mineInfo.name}}</view>
+
+<view class="mine-details">{{mineInfo.adMotto}}</view>
+
+
+<view class="mine-users">
+  <block wx:for="{{mineInfo.avatarUrls}}" wx:for-item="imgUrl" wx:for-index="userIndex" wx:key="user">
+    <image src="{{imgUrl}}" class="user-img"></image>
+  </block>
+</view>
+
+<view class="progress-view">
+  <view class="progress-left">
+    <image class="mine-ioc" src='../../dist/icos/money0.png'></image>
+    <label>{{mineInfo.sendAmount}}/{{mineInfo.totalAmount}}</label>
+  </view>
+  <label class="progress-right">{{mineInfo.sendWinNum}}人挖了该矿山</label>
+  <progress percent="{{mineInfo.sendAmount/mineInfo.totalAmount*100}}" active activeColor='#7acfa6' stroke-width="10" />
+</view>
+
+<block wx:if="{{status}}">
+  <view class="mine-status">
+    <image class="mine-ioc" src='../../dist/icos/working.png'></image>
+    <text class="mine-text-label">挖矿中</text>
+  </view>
+</block>
+
+<block wx:else>
+  <view class="mine-button">
+    <view bindtap='work' class="button-action">我也要挖矿</view>
+  </view>
+</block>
+
+
+<modal hidden="{{hiddenmodalput}}" title="请选择挖矿时间和宠物" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <view class='stepper'>
+    <text type='number' bindtap='bindMinus'>-</text>
+    <input bindinput='workTimeInput' value='{{workTime}}' disabled='true'></input>
+    <text bindtap='bindPlus'>+</text>
+  </view>
+
+  <picker-view indicator-style="text-align:center;" style="width: 100%; height: 170rpx;text-align:center;" bindchange="selectPet">
+    <picker-view-column>
+      <view wx:for="{{petList}}" style="line-height: 30px">{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+
+</modal>

@@ -1,0 +1,189 @@
+page {
+  background: #f4f4f4;
+  color: #555;
+}
+
+.mine-list {
+  overflow: hidden;
+}
+
+.mine-item {
+  width: 710rpx;
+  height: 360rpx;
+  background: #fff;
+}
+
+.system-img {
+  width: 100%;
+}
+
+.mine-img {
+  margin-top: 30rpx;
+  margin-left: 80rpx;
+  width: 200rpx;
+  height: 200rpx;
+  background: #fff;
+}
+
+.mine-item {
+  box-sizing: border-box;
+  position: relative;
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.mine-item-system::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -80rpx;
+  right: -80rpx;
+  z-index: 4;
+  width: 160rpx;
+  height: 160rpx;
+  transform: rotate(45deg);
+  background-color: #7acfa6;
+}
+
+.mine-item-system::after {
+  content: '系统';
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  z-index: 4;
+  text-align: center;
+  transform: rotate(45deg);
+  color: #fff;
+}
+
+.mine-item-current::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -80rpx;
+  right: -80rpx;
+  z-index: 4;
+  width: 160rpx;
+  height: 160rpx;
+  transform: rotate(45deg);
+  background-color: #7acfa6;
+}
+
+.mine-item-current::after {
+  content: '挖矿';
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  z-index: 4;
+  text-align: center;
+  transform: rotate(45deg);
+  color: #fff;
+}
+
+.mine-ioc {
+  padding-top: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+}
+
+.mine-slogan {
+  position: absolute;
+  top: 235rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  padding: 0 40rpx;
+  color: #7b7b7b;
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.mine-wealth {
+  position: absolute;
+  top: 140rpx;
+  right: 0;
+  height: 100rpx;
+  line-height: 60rpx;
+  padding: 0 40rpx;
+  color: #7acfa6;
+  z-index: 4;
+}
+
+.mine-name {
+  position: absolute;
+  top: 80rpx;
+  right: 0;
+  height: 100rpx;
+  line-height: 60rpx;
+  padding: 0 40rpx;
+  color: #7b7b7b;
+  z-index: 4;
+  font-size: 32rpx;
+}
+
+.mine-text-total {
+  font-weight: bold;
+  font-size: 44rpx;
+}
+
+.mine-text-label {
+  margin-left: 40rpx;
+  padding: 0 10rpx;
+  font-size: 32rpx;
+}
+
+.mine-total {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 10rpx;
+  padding: 0 40rpx;
+  background: #ddd;
+}
+
+.mine-progress {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10rpx;
+  /* padding: 0 40rpx; */
+  background-color: #7acfa6;
+}
+
+.mine-ad {
+  height: 200rpx;
+}
+
+.ad-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 54rpx;
+  line-height: 200rpx;
+  text-align: center;
+  color: #7b7b7b;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.user-btn {
+  width: 320rpx;
+  position: fixed;
+  z-index: 999;
+  height: 80rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  border-radius: 0rpx;
+  opacity: 0;
+}

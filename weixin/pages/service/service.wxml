@@ -1,0 +1,31 @@
+<!--about.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="black-cover"></view>
+    <image class="logo" src="../../dist/icos/logo_bg.png"></image>
+    <text class="title">G e G z</text>
+  </view>
+
+  <view class="content">
+    <view class="version">
+      <view class="version-title">
+        <text class="version-text">{{version}}</text>
+        <text class="version-text">{{type}}</text>
+      </view>
+    </view>
+    <view class="describe">
+      <text class="desc-content">{{content}}</text>
+      <!-- <text class="desc-content">用户的金币在平台运营时间内有效。</text>
+      <text class="desc-content">使用平台即表示同意该服务条款。</text>
+      <text class="desc-content">该服务条款最终解释权归@GeGz平台。</text> -->
+    </view>
+
+  </view>
+  <view class="footer">
+    <view class="footer-lanshan">
+      <image src="../../dist/icos/my_icon.png"></image>
+      <text>阿尔法</text>
+    </view>
+    <text>Copyright @ 2018 All Rights Reserved</text>
+  </view>
+</view>

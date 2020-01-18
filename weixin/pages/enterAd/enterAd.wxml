@@ -1,0 +1,46 @@
+<!--about.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="black-cover"></view>
+    <image class="logo" src="../../dist/icos/logo_bg.png"></image>
+    <text class="title">G e G z</text>
+  </view>
+
+  <view class="content">
+    <view class="version">
+      <view class="version-title">
+        <text class="version-text">{{version}}</text>
+        <text class="version-text">{{type}}</text>
+      </view>
+    </view>
+    <view class="describe">
+    
+      <text class="desc-content">{{content}}</text>
+      <!-- <text class="desc-content">投入资金后，我们将会给您奖励一座矿山，显示在矿山界面，平台的用户可以进入您的矿山挖取金币。</text>
+      <text class="desc-content">您的矿山金币数=投入的资金（人民币）x 当日（投入广告当天）汇率。</text>
+      <text class="desc-content">一旦投入平台后资金都将作为金币的形式存在于平台中，资金不允许提现。</text> -->
+
+
+      <view class="enter-button">
+        <view bindtap='enter' class="button-action">投入广告</view>
+      </view>
+
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-lanshan">
+      <image src="../../dist/icos/my_icon.png"></image>
+      <text>阿尔法</text>
+    </view>
+    <text>Copyright @ 2018 All Rights Reserved</text>
+  </view>
+</view>
+
+
+<modal hidden="{{hiddenmodalput}}" title="" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  请输入意向投资意向，随后我们将联系您
+  <image class="ico-phone" src="../../dist/icos/phone.png"></image>
+  <image class="ico-money" src="../../dist/icos/money.png"></image>
+  <input class="model-imput" type='number' placeholder="电话" bindinput='phoneInput' placeholder-style="color: #e5e5e5;font-size:36rpx;"></input>
+  <input class="model-imput" type='money' placeholder="金额" bindinput='moneyInput' placeholder-style="color: #e5e5e5;font-size:36rpx;"></input>
+</modal>

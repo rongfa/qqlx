@@ -1,0 +1,43 @@
+<view class="cell-user">
+  <view class="cell-avatar">
+    <image src=' {{userInfo.avatarUrl}}' class="user-avatar"></image>
+  </view>
+  <view class="cell-info">
+    <view class="user-name">
+      {{userInfo.nickName}}
+    </view>
+    <view class="user-number">GID：{{userInfo.id}}</view>
+    <view class="user-money">
+      <image class="user-ioc" src="../../dist/icos/money0.png"></image>
+      <label class="user-money-value">{{userInfo.mineNum}}</label>
+    </view>
+  </view>
+</view>
+
+<view class="pet-list">
+  <block wx:for="{{petList}}" wx:for-item="petItem" wx:for-index="petIndex" wx:key="pet">
+    <view class="pet-item {{petItem.id == mypetId ? 'pet-item-current' : ''}}" data-petid="{{petItem.id}}" bindtap="choosepet">
+
+      <image src="{{petItem.url}}" class="pet-img"></image>
+
+      <view class="pet-detail">
+        <view class="pet-name">{{petItem.name}}</view>
+
+        <view class="progress-view first">
+          <label class="progress-left">成长:{{petItem.growValue}}/{{petItem.nextGrowLevelValue}}</label>
+          <label class="progress-right">{{petItem.growLevel}}</label>
+          <progress percent="71" active activeColor='#87CEEB' stroke-width="10" />
+        </view>
+
+
+        <view class="progress-view">
+          <label class="progress-left">活跃:{{petItem.activeValue}}/{{petItem.nextActiveLevelValue}}</label>
+          <label class="progress-right">{{petItem.activeLevel}}</label>
+          <progress percent="42" active activeColor='#F08080' stroke-width="10" />
+        </view>
+
+      </view>
+
+    </view>
+  </block>
+</view>

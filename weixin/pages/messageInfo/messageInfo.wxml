@@ -1,0 +1,19 @@
+<view class="mine-img">
+  <image mode="widthFix" src="{{msgInfo.adImg}}" class=" img-info"></image>
+</view>
+
+<view class="mine-name">{{msgInfo.mineName}}</view>
+
+<view class="mine-details">{{msgInfo.adInfo}}</view>
+
+
+<view class="mine-money">
+  <text class="money-value">{{msgInfo.rewardMoney}}</text>X
+  <image class="money-img" src="../../dist/icos/money0.png"></image>
+</view>
+
+<block wx:if="{{status==false}}">
+  <view class="receive-button">
+    <view bindtap='receive' class="button-action">领取</view>
+  </view>
+</block>

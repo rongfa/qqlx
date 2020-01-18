@@ -1,0 +1,203 @@
+page {
+  background: #f4f4f4;
+  color: #555;
+}
+
+.cells {
+  position: relative;
+  margin: 20rpx 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.cell {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  width: 750rpx;
+  height: 100rpx;
+  padding: 0 40rpx;
+  font-size: 32rpx;
+  line-height: 100rpx;
+}
+
+.cell::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 40rpx;
+  width: 100%;
+  height: 1px;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+  background-color: #e5e5e5;
+}
+
+.cell-ft {
+  color: #bbb;
+}
+
+.cell-access .cell-ft {
+  padding-right: 13px;
+  position: relative;
+}
+
+.cell-access .cell-ft::after {
+  content: '';
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+  right: 2px;
+}
+
+.cell-access .cell-tip {
+  padding-right: 13px;
+  position: relative;
+}
+
+.cell-access .cell-tip::after {
+  content: '';
+  height: 22rpx;
+  width: 22rpx;
+  background: #f34829;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+  border-radius: 11rpx;
+  opacity: 0.8;
+}
+
+.ioc {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+  position: absolute;
+}
+
+.cell-label {
+  padding-left: 60rpx;
+}
+
+.cell-user {
+  height: 210rpx;
+  margin: 20rpx 0;
+  background: #fff;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell-avatar {
+  display: block;
+  position: absolute;
+}
+
+.cell-info {
+  display: block;
+  position: absolute;
+}
+
+.user-avatar {
+  padding-left: 30rpx;
+  padding-top: 30rpx;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.user-name {
+  padding-top: 60rpx;
+  padding-left: 210rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  /*隐藏溢出的文本  */
+  display: inline-block;
+  width: 400rpx;
+  overflow: hidden;
+  white-space: nowrap; /*不换行  */
+  text-overflow: ellipsis;
+}
+
+.user-number {
+  padding-top: 0rpx;
+  padding-left: 210rpx;
+  font-size: 22rpx;
+}
+
+.user-money {
+  padding-left: 210rpx;
+  font-size: 26rpx;
+  padding-top: 20rpx;
+}
+
+.user-ioc {
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+}
+
+.user-money-value {
+  margin-left: 35rpx;
+  padding: 0 10rpx;
+}
+
+.signIn-ioc-no {
+  margin-top: 105rpx;
+  margin-left: 660rpx;
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.signIn-ioc {
+  margin-top: 105rpx;
+  margin-left: 600rpx;
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.signIn-value {
+  font-weight: bold;
+  margin-left: 20rpx;
+  position: relative;
+  top: -35rpx;
+}
+
+.signIn-label {
+  margin-top: 110rpx;
+  margin-left: 660rpx;
+  position: absolute;
+}
+
+.shate-button {
+  width: 800rpx;
+  position: fixed;
+  z-index: 999;
+  height: 100rpx;
+  left: 0rpx;
+  border-radius: 0rpx;
+  opacity: 0;
+}
+
+.location-btn {
+  width: 320rpx;
+  position: fixed;
+  z-index: 999;
+  height: 80rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  border-radius: 0rpx;
+  opacity: 0;
+}

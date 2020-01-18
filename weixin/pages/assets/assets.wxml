@@ -1,0 +1,50 @@
+<view class="cells">
+
+  <view class="ykt-card">
+    <view class="ykt-black-line"></view>
+    <view class="ykt-content">
+      <view class="ykt-ye">
+        <view class="ykt-ye-money">
+          <text class="ykt-ye-value">{{assets.totalAmount}}</text>X
+          <image class="ykt-ye-img" src="../../dist/icos/money0_null.png"></image>
+        </view>
+      </view>
+
+      <view class="ykt-img">
+        <image src="../../dist/icos/card.png"></image>
+      </view>
+    </view>
+    <view class="ykt-card-more">
+      <text class="ykt-ye-total">累计：{{assets.totalAmount}}</text>
+      <text class="ykt-ye-id">2 3 6 5 2 3</text>
+    </view>
+  </view>
+
+  <view class="extract-button">
+    <view bindtap='extract' class="button-action">提现</view>
+  </view>
+
+  <view class="rate-out">
+    <view>
+      <!-- <label class="cell-rate">今日汇率：0.52</label> -->
+      <label class="cell-rate"></label>
+    </view>
+    <view class="cell-out">
+      <view class="label-out">提现
+        <text class="money-out">{{assets.totalCashAmount}}</text>元
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="cells">
+  <block wx:for="{{assetsRecord}}" wx:for-item="record" wx:key="assetsRecordKey">
+    <view class="cell cell-access " bindtap="viewAssets ">
+      <view>
+        <label class="cell-time ">{{record.showDate}}</label>
+      </view>
+      <view class="cell-ft ">{{record.amount}}</view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,109 @@
+@import '../../common/style/button.wxss';
+
+page {
+  background: #f4f4f4;
+  color: #555;
+}
+
+.mine-img {
+  text-align: center;
+  padding: 40rpx 40rpx 10rpx 40rpx;
+}
+
+.img-info {
+  width: 100%;
+}
+
+.mine-name {
+  position: relative;
+  height: 40rpx;
+  font-size: 36rpx;
+  padding: 20rpx 40rpx 10rpx 40rpx;
+  line-height: 40rpx;
+}
+
+.mine-details {
+  position: relative;
+  font-size: 24rpx;
+  padding: 10rpx 40rpx 10rpx 40rpx;
+  line-height: 30rpx;
+}
+
+.mine-users {
+  padding: 40rpx 40rpx 10rpx 40rpx;
+}
+
+.user-img {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  margin: 5rpx;
+}
+
+.mine-button {
+  position: relative;
+  padding: 60rpx;
+}
+
+.progress-view {
+  position: relative;
+  font-size: 32rpx;
+  color: #6b6b6b;
+  padding: 50rpx 40rpx 10rpx 40rpx;
+}
+
+.progress-left {
+  position: absolute;
+  bottom: 30rpx;
+  font-size: 32rpx;
+  left: 40rpx;
+}
+
+.progress-right {
+  position: absolute;
+  bottom: 30rpx;
+  right: 40rpx;
+  font-size: 32rpx;
+}
+
+.mine-ioc {
+  margin-bottom: -10rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.mine-status {
+  padding: 60rpx;
+  text-align: center;
+}
+
+/*主容器*/
+.stepper {
+  width: 240rpx;
+  height: 70rpx;
+  margin: 30rpx auto;
+  border: 1px solid #ccc;
+  margin-bottom: 20rpx;
+}
+
+/*加号和减号*/
+.stepper text {
+  font-size: 40rpx;
+  float: left;
+  width: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+
+/*数值*/
+
+.stepper input {
+  font-size: 30rpx;
+  width: 97rpx;
+  height: 70rpx;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}

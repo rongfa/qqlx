@@ -1,0 +1,15 @@
+.button-action {
+  margin: 0 auto;
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  border: 1px solid #7ACFA6;
+  color: #7ACFA6;
+}
+
+.button-action:active {
+  background-color: #7ACFA6;
+  color: #fff;
+}

@@ -1,0 +1,177 @@
+page {
+  background: #f4f4f4;
+  color: #555;
+}
+
+.ioc {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+  position: absolute;
+}
+
+.cell-label {
+  padding-left: 60rpx;
+}
+
+.cell-user {
+  height: 210rpx;
+  margin: 20rpx 0;
+  background: #fff;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell-avatar {
+  display: block;
+  position: absolute;
+}
+
+.cell-info {
+  display: block;
+  position: absolute;
+}
+
+.user-avatar {
+  padding-left: 30rpx;
+  padding-top: 30rpx;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.user-name {
+  padding-top: 70rpx;
+  padding-left: 210rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  /*隐藏溢出的文本  */
+  display: inline-block;
+  width: 400rpx;
+  overflow: hidden;
+  white-space: nowrap; /*不换行  */
+  text-overflow: ellipsis;
+}
+
+.user-number {
+  padding-top: 0rpx;
+  padding-left: 210rpx;
+  font-size: 22rpx;
+}
+
+.user-money {
+  padding-left: 210rpx;
+  font-size: 26rpx;
+  padding-top: 20rpx;
+}
+
+.user-ioc {
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+}
+
+.user-money-value {
+  margin-left: 35rpx;
+  padding: 0 10rpx;
+}
+
+.pet-item {
+  width: 710rpx;
+  height: 360rpx;
+  background: #fff;
+}
+
+.pet-img {
+  margin-top: 60rpx;
+  margin-left: 30rpx;
+  width: 240rpx;
+  height: 240rpx;
+  animation: sway 30s ease-in-out infinite;
+}
+
+.pet-item {
+  box-sizing: border-box;
+  position: relative;
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.pet-detail {
+  position: absolute;
+  top: 10rpx;
+  left: 310rpx;
+  width: 380rpx;
+  color: #7b7b7b;
+  z-index: 4;
+}
+
+.pet-name {
+  position: relative;
+  height: 40rpx;
+  margin-top: 40rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  font-weight: bold;
+}
+
+.progress-view {
+  margin-top: 70rpx;
+  position: relative;
+  font-size: 32rpx;
+  color: #6b6b6b;
+}
+
+.first {
+  margin-top: 80rpx;
+}
+
+.cell-label {
+  color: #6b6b6b;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+
+.progress-left {
+  position: absolute;
+  bottom: 30rpx;
+  font-size: 24rpx;
+}
+
+.progress-right {
+  position: absolute;
+  right: 15rpx;
+  bottom: 30rpx;
+}
+
+@keyframes sway {
+  0% {
+    transform: translate3d(0, 20rpx, 0) rotate(-15deg);
+  }
+
+  17% {
+    transform: translate3d(0, 0rpx, 0) rotate(25deg);
+  }
+
+  34% {
+    transform: translate3d(0, -20rpx, 0) rotate(-20deg);
+  }
+
+  50% {
+    transform: translate3d(0, -10rpx, 0) rotate(15deg);
+  }
+
+  67% {
+    transform: translate3d(0, 10rpx, 0) rotate(-25deg);
+  }
+
+  84% {
+    transform: translate3d(0, 15rpx, 0) rotate(15deg);
+  }
+
+  100% {
+    transform: translate3d(0, 20rpx, 0) rotate(-15deg);
+  }
+}

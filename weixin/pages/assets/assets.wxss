@@ -1,0 +1,165 @@
+@import '../../common/style/button.wxss';
+
+page {
+  background: #f4f4f4;
+  color: #555;
+}
+
+.ykt-card {
+  display: flex;
+  flex-direction: column;
+  height: 360rpx;
+  margin: 30rpx;
+  background: #7acfa6;
+  border-radius: 15rpx;
+}
+
+.ykt-black-line {
+  width: 100%;
+  height: 80rpx;
+  margin: 45rpx 0 0;
+  background: #7b7b7b;
+}
+
+.ykt-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ykt-ye {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: rgb(245, 245, 244);
+}
+
+.ykt-ye-money {
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.ykt-ye-value {
+  font-size: 72rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  padding-right: 25rpx;
+}
+
+.ykt-ye-img {
+  width: 45rpx;
+  height: 45rpx;
+  position: absolute;
+  margin-top: 32rpx;
+  margin-left: 15rpx;
+}
+
+.ykt-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200rpx;
+}
+
+.ykt-img image {
+  width: 125rpx;
+  height: 125rpx;
+  padding: 20rpx 30rpx;
+}
+
+.ykt-card-more {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 5rpx 30rpx 20rpx 30rpx;
+  line-height: 100%;
+  opacity: 0.6;
+  font-weight: bold;
+  font-size: 20rpx;
+}
+
+.ykt-ye-total {
+  font-size: 9pt;
+}
+
+.ykt-ye-id {
+  font-weight: bold;
+  font-size: 20rpx;
+}
+
+.money-out {
+  font-size: 40rpx;
+  font-weight: bold;
+  padding: 0 10rpx;
+  color: #7acfa6;
+  margin-bottom: 5rpx;
+}
+
+.label-out {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 5rpx 30rpx 10rpx 30rpx;
+}
+
+.cells {
+  position: relative;
+  margin: 20rpx 0;
+  background: #fff;
+  overflow: hidden;
+  color: #6b6b6b;
+}
+
+.cell {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  width: 750rpx;
+  height: 100rpx;
+  padding: 0 40rpx;
+  font-size: 32rpx;
+  line-height: 100rpx;
+}
+
+.cell::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 40rpx;
+  width: 100%;
+  height: 1px;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+  background-color: #e5e5e5;
+}
+
+.cell-ft {
+  color: #bbb;
+  font-size: 36rpx;
+}
+
+.extract-button {
+  position: relative;
+  padding: 40rpx 0 0 0;
+}
+
+.cell-time {
+  font-size: 28rpx;
+}
+
+.rate-out {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 30rpx 30rpx 20rpx 30rpx;
+  line-height: 100%;
+}
+
+.cell-rate {
+  font-size: 28rpx;
+  padding-left: 10rpx;
+}

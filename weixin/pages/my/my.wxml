@@ -1,0 +1,114 @@
+<view class="cell-user">
+  <view class="cell-avatar">
+    <view class="user-avatar">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <view class="cell-info">
+    <view class="user-name">
+      <open-data type="userNickName"></open-data>
+    </view>
+    <view class="user-number">GID：{{userInfo.id}}</view>
+    <view class="user-money">
+      <image class="user-ioc" src="../../dist/icos/money0.png"></image>
+      <label class="user-money-value">{{userInfo.mineNum}}</label>
+    </view>
+  </view>
+
+  <view class="cell-info">
+    <block wx:if="{{signStatus}}">
+      <image class="signIn-ioc" src="../../dist/icos/signIn.png"></image>
+      <label class="signIn-label">x
+        <label class="signIn-value">{{userInfo.continueSignNum}}</label>
+      </label>
+    </block>
+
+    <block wx:else>
+      <image bindtap='signIn' class="signIn-ioc-no" src="../../dist/icos/signIn_active.png"></image>
+      <label class="signIn-label">
+      </label>
+    </block>
+  </view>
+
+</view>
+
+<block>
+  <view class="cells">
+    <block>
+      <view class="cell cell-access" bindtap="viewAssets">
+        <view>
+          <image src="../../dist/icos/assets.png" class="ioc"></image>
+          <label class="cell-label">资产</label>
+        </view>
+        <view class="cell-ft"></view>
+      </view>
+    </block>
+  </view>
+</block>
+
+<block>
+  <view class="cells">
+    <block>
+      <view class="cell cell-access" bindtap="viewMessage">
+        <view>
+          <image src="../../dist/icos/message.png" class="ioc"></image>
+          <label class="cell-label">消息</label>
+        </view>
+        <block wx:if="{{msgStatus}}">
+          <view class="cell-tip"></view>
+        </block>
+        <block wx:else>
+          <view class="cell-ft"></view>
+        </block>
+      </view>
+    </block>
+  </view>
+</block>
+
+<block>
+  <view class="cells">
+    <block>
+      <view class="cell cell-access">
+        <view>
+          <image src="../../dist/icos/share.png" class="ioc"></image>
+          <label class="cell-label">邀请好友</label>
+        </view>
+        <button class="shate-button" open-type='share'></button>
+      </view>
+
+      <view class="cell cell-access" bindtap="refreshCity">
+        <view>
+          <image src="../../dist/icos/location.png" class="ioc"></image>
+          <label class="cell-label">更新位置</label>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</block>
+
+<block>
+  <view class="cells">
+    <block>
+      <view class="cell cell-access" bindtap='viewService'>
+        <view>
+          <image src="../../dist/icos/service.png" class="ioc"></image>
+          <label class="cell-label">服务说明</label>
+        </view>
+        <view class="cell-ft"></view>
+      </view>
+      <view class="cell cell-access" bindtap="viewEnterAd">
+        <view>
+          <image src="../../dist/icos/ad.png" class="ioc"></image>
+          <label class="cell-label">广告投入</label>
+        </view>
+        <view class="cell-ft"></view>
+      </view>
+    </block>
+  </view>
+</block>
+
+<modal hidden="{{locationHidden}}" title="请求授权当前位置" confirm-text="去授权" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  需要获取您的地理位置，请确认授权
+  <button open-type='openSetting' class="location-btn" bindopensetting="handler"></button>
+</modal>

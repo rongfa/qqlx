@@ -1,0 +1,56 @@
+@import '../../common/style/button.wxss';
+
+page {
+  background: #f4f4f4;
+  color: #555;
+}
+
+.mine-img {
+  text-align: center;
+  padding: 40rpx 40rpx 10rpx 40rpx;
+}
+
+.img-info {
+  width: 100%;
+}
+
+.mine-name {
+  position: relative;
+  height: 40rpx;
+  font-size: 36rpx;
+  padding: 20rpx 40rpx 10rpx 40rpx;
+  line-height: 40rpx;
+}
+
+.mine-details {
+  position: relative;
+  font-size: 24rpx;
+  padding: 10rpx 40rpx 10rpx 40rpx;
+  line-height: 30rpx;
+}
+
+.receive-button {
+  position: relative;
+  padding: 60rpx;
+}
+
+.mine-money {
+  padding-top: 50rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.money-value {
+  font-size: 72rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  padding-right: 25rpx;
+}
+
+.money-img {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  padding-top: 28rpx;
+  padding-left: 15rpx;
+}

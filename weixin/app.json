@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/mine/mine",
+    "pages/mineInfo/mineInfo",
+    "pages/pet/pet",
+    "pages/rank/rank",
+    "pages/my/my",
+    "pages/userInfo/userInfo",
+    "pages/assets/assets",
+    "pages/message/message",
+    "pages/messageInfo/messageInfo",
+    "pages/service/service",
+    "pages/enterAd/enterAd"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#7ACFA6",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "GeGz",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#686868",
+    "selectedColor": "#7ACFA6",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "dist/icos/mine.png",
+        "selectedIconPath": "dist/icos/mine_active.png",
+        "text": "矿山"
+      },
+      {
+        "pagePath": "pages/pet/pet",
+        "iconPath": "dist/icos/pet.png",
+        "selectedIconPath": "dist/icos/pet_active.png",
+        "text": "宠物"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "iconPath": "dist/icos/rank.png",
+        "selectedIconPath": "dist/icos/rank_active.png",
+        "text": "排行"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "dist/icos/my.png",
+        "selectedIconPath": "dist/icos/my_active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

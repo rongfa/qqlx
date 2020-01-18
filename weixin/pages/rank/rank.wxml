@@ -1,0 +1,99 @@
+<import src="../../common/component/nullTip/nullTip.wxml" />
+
+<view class="tab">
+  <view class="tab-header">
+    <view class="tab-header-item {{show == 'area' ? 'tab-header-active' : ''}}" data-type="area" bindtap="changeViewType">{{currentCity}}</view>
+    <view class="tab-header-item {{show == 'all' ? 'tab-header-active' : ''}}" data-type="all" bindtap="changeViewType">世界</view>
+  </view>
+</view>
+
+<view class="tab-content">
+
+  <view class="tab-content-item" hidden="{{show == 'area' ? false : true}}">
+    <block wx:if="{{currentCity!='城市'}}">
+      <view class="cells" wx:for="{{areaList}}" wx:for-item="areaItem" wx:for-index="areaIndex" wx:key="area">
+        <view class="cell cell-access" bindtap="chooseRank" data-rankid="{{areaItem.openId}}">
+          <image src="{{areaItem.avatarUrl}}" class="ioc"></image>
+
+          <view>
+            <view class="label-title">{{areaItem.nickName}}</view>
+            <view class="label-content">
+              <image class="label-ioc" src="../../dist/icos/money0.png"></image>
+              <label class="label-money-value">{{areaItem.mineNum}}</label>
+            </view>
+
+          </view>
+          <view>
+
+            <block wx:if="{{areaIndex==0}}">
+              <view class="label-rank">
+                <image class="rank-ioc" src="../../dist/icos/rank1.png"></image>
+              </view>
+            </block>
+            <block wx:if="{{areaIndex==1}}">
+              <view class="label-rank">
+                <image class="rank-ioc" src="../../dist/icos/rank2.png"></image>
+              </view>
+            </block>
+            <block wx:if="{{areaIndex==2}}">
+              <view class="label-rank">
+                <image class="rank-ioc" src="../../dist/icos/rank3.png"></image>
+              </view>
+            </block>
+            <block wx:if="{{areaIndex>2}}">
+              <view class="label-rank">{{areaIndex+1}}</view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <template is="nullTip" data="{{nullTip: nullTip}}" />
+    </block>
+  </view>
+
+  <view class="tab-content-item" hidden="{{show == 'all' ? false : true}}">
+    <view class="cells" wx:for="{{allList}}" wx:for-item="areaItem" wx:for-index="areaIndex" wx:key="area">
+      <view class="cell cell-access" bindtap="chooseRank" data-rankid="{{areaItem.openId}}">
+        <image src="{{areaItem.avatarUrl}}" class="ioc"></image>
+
+        <view>
+          <view class="label-title">{{areaItem.nickName}}</view>
+          <view class="label-content">
+            <image class="label-ioc" src="../../dist/icos/money0.png"></image>
+            <label class="label-money-value">{{areaItem.mineNum}}</label>
+          </view>
+
+        </view>
+        <view>
+
+          <block wx:if="{{areaIndex==0}}">
+            <view class="label-rank">
+              <image class="rank-ioc" src="../../dist/icos/rank1.png"></image>
+            </view>
+          </block>
+          <block wx:if="{{areaIndex==1}}">
+            <view class="label-rank">
+              <image class="rank-ioc" src="../../dist/icos/rank2.png"></image>
+            </view>
+          </block>
+          <block wx:if="{{areaIndex==2}}">
+            <view class="label-rank">
+              <image class="rank-ioc" src="../../dist/icos/rank3.png"></image>
+            </view>
+          </block>
+          <block wx:if="{{areaIndex>2}}">
+            <view class="label-rank">{{areaIndex+1}}</view>
+          </block>
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<modal hidden="{{locationHidden}}" title="请求授权当前位置" confirm-text="去授权" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  需要获取您的地理位置，请确认授权
+  <button open-type='openSetting' class="location-btn" bindopensetting="handler"></button>
+</modal>

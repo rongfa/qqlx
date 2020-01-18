@@ -1,0 +1,113 @@
+<block wx:if="{{petList.length==0}}">
+  <import src="../../common/component/nullTip/nullTip.wxml" />
+
+  <template is="nullTip" data="{{nullTip: nullTip}}" />
+</block>
+
+<block wx:else>
+  <view class="pet-list">
+    <block wx:for="{{petList}}" wx:for-item="petItem" wx:for-index="petIndex" wx:key="pet">
+      <view class="pet-item item-info {{petItem.id == mypetId ? 'pet-item-current' : ''}}" data-petid="{{petItem.id}}" bindtap="choosepet">
+
+        <image src="{{petItem.url}}" class="pet-img"></image>
+
+        <view class="pet-detail">
+
+          <view>
+            <block wx:if="{{editStatus==false}}">
+              <image class="mine-ioc-edit" src='../../dist/icos/edit.png' bindtap='edit'></image>
+              <block wx:if="{{petItem.name}}">
+                <view class="pet-name">{{petItem.name}}</view>
+              </block>
+              <block wx:else>
+                <view class="pet-name">点我修改宠物名称</view>
+              </block>
+            </block>
+            <block wx:if="{{editStatus==true}}">
+              <input class="pet-name-edit" focus="true" maxlength="10" value="{{petItem.name}}" data-editpetid="{{petItem.id}}" bindinput='editName' bindconfirm='saveName'></input>
+            </block>
+
+          </view>
+
+          <view class="progress-view first">
+            <label class="progress-left">成长:{{petItem.growValue}}/{{petItem.nextGrowLevelValue}}</label>
+            <label class="progress-right">{{petItem.growLevel}}</label>
+            <progress percent="71" active activeColor='#87CEEB' stroke-width="10" />
+          </view>
+
+
+          <view class="progress-view">
+            <label class="progress-left">活跃:{{petItem.activeValue}}/{{petItem.nextActiveLevelValue}}</label>
+            <label class="progress-right">{{petItem.activeLevel}}</label>
+            <progress percent="42" active activeColor='#F08080' stroke-width="10" />
+          </view>
+
+          <block wx:if="{{petItem.status}}">
+            <view class="pet-status">
+              <image class="mine-ioc" src='../../dist/icos/working.png'></image>
+              <text class="mine-text-label">挖矿中</text>
+            </view>
+          </block>
+
+          <block wx:else>
+            <view class="pet-status">
+              <image class="mine-ioc" src='../../dist/icos/towork.png'></image>
+              <text bindtap='toWOrk' class="mine-text-label">去挖矿</text>
+            </view>
+          </block>
+
+        </view>
+
+        <view class="pet-total">
+          <view class="pet-progress" style="width: {{petItem.done/petItem.total*100}}%;"></view>
+        </view>
+
+      </view>
+    </block>
+
+    <view class="pet-item pet-item-system">
+      <view class="describe">
+        <text class="desc-content">1.等级越高每次可挖矿时间越长</text>
+        <text class="desc-content">2.签到和挖矿都会增加成长值</text>
+        <text class="desc-content">3.连续签到天数越多获得成长值越多</text>
+        <text class="desc-content">4.邀请好友会获得活跃值</text>
+        <text class="desc-content">5.邀请好友成功后会获得大量活跃值</text>
+        <text class="desc-content">6.活跃等级和成长等级越高挖到的矿的数量越大</text>
+        <text class="desc-content">7.成长/活跃等级与积分对应如下表：</text>
+
+        <!-- <view class="desc-content">
+          <view class="container">
+            <view class="table">
+              <view class="tr">
+                <view class="th">等级</view>
+                <view class="th">成长值</view>
+                <view class="th">活跃值</view>
+              </view>
+              <view class="tr" wx:for="{{levelList}}" wx:key="pet">
+                <view class="td">{{item.l}}</view>
+                <view class="td">{{item.c}}</view>
+                <view class="td">{{item.h}}</view>
+              </view>
+            </view>
+          </view>
+        </view> -->
+
+      </view>
+    </view>
+  </view>
+</block>
+
+<modal hidden="{{hiddenmodalput}}" title="" confirm-text="领取" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  <view class='content'>
+    <block wx:for="{{length}}" wx:key="item">
+      <input class='iptbox' value="{{code.length>=index+1?code[index]:''}}" disabled catchtap='Tap'></input>
+    </block>
+  </view>
+  <input type='number' class='ipt' maxlength="{{length}}" focus="{{isFocus}}" bindinput="Focus"></input>
+  请输入邀请码（没有请直接点击领取）
+</modal>
+
+
+<modal hidden="{{hiddenfriendmodal}}" title="" confirm-text="领取" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+  "{{friendName}}" 赠送了你一个宠物，点击领取
+</modal>
